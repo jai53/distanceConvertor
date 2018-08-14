@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+         crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin-top: 100px;
+            margin-left:200px;
+            background-color: green;
+                }        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="display-3 text-center"> converter</h1>
+                <form>
+                    <div class="form-group">
+                        <input  id="lib" type="number" class=" form-control form-control-lg" placeholder="enter the kilometres">
+                        
+                    </div>
+                </form>
+                <div id="output">
+                        <div class="card card-primary mb-2">
+                            <div class="card-block">
+                                <h4> miles: </h4>
+                                    <div id="m"></div>
+                            </div>
+                        </div>
+                        <div class="card card-success mb-2">
+                            <div class="card-block">
+                                <h4> yards: </h4>
+                                    <div id="y"></div>
+                            </div>
+                        </div>
+                        <div class="card card-danger mb-2">
+                            <div class="card-block">
+                                <h4> feet: </h4>
+                                    <div id="f"></div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('output').style.visibility='hidden';
+        document.getElementById('lib').addEventListener('input',function(e)
+        {
+            document.getElementById('output').style.visibility='visible';
+let lbs=e.target.value;
+document.getElementById('m').innerHTML=lbs*0.621371;
+document.getElementById('y').innerHTML=lbs*1093.61;
+document.getElementById('f').innerHTML=lbs*3280.84;
+        });
+        </script>
+</body>
+</html>
